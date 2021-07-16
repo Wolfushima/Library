@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Library</title>
+</head>
+<body>
+    <form action="" id="newBook-form" autocomplete="off">
+        <div>
+            <label for="title">Title: </label>
+            <input type="text" name="title" id="title" required>
+        </div>
+        <div>
+            <label for="author">Author: </label>
+            <input type="text" name="author" id="author" required>
+        </div>
+        <div>
+            <label for="pages">Pages: </label>
+            <input type="text" name="pages" id="pages" required>
+        </div>
+        <div>
+            <label for="read">Read?: </label>
+            <input type="text" name="read" id="read" required>
+        </div>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+    </form>
+    <div class="books-container">
+        <div class="book-card">
+            <p>The Hobbit</p>
+            <p>J.R.R Tolkien</p>
+            <p>365 Pages</p>
+            <p>Read</p>
+        </div>
+    </div>
+    <!-- <button class="btn-newbook">ADD NEW BOOK</button> -->
+    <script src="script.js"></script>
+</body>
+</html>
