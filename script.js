@@ -1,4 +1,5 @@
 const form = document.querySelector("#newBook-form");
+const booksContainer = document.querySelector(".books-container");
 let myLibrary = [];
 
 form.addEventListener("submit", submitNewBook)
@@ -22,8 +23,8 @@ console.log(myLibrary)
 
 /*          --- LIBRARY FUNCTIONS ---           */
 function addBookToLibrary(title, author, pages, read) {
-    const newBook = new Book(title, author, pages, read)
-    myLibrary.push(newBook);
+    const newBook = new Book(title, author, pages, read);
+    myLibrary.push(newBook)
 }
 
 
@@ -34,10 +35,32 @@ function submitNewBook(event) {
     const inputPages = document.querySelector("#pages").value;
     const inputRead = document.querySelector("#read").value;
 
-    addBookToLibrary(inputTitle, inputAuthor, inputPages, inputRead);
+    addBookToLibrary(inputTitle, inputAuthor, inputPages, inputRead)
+    createNewBookCard(inputTitle, inputAuthor, inputPages, inputRead)
+
     console.log(myLibrary)
-    form.reset();
-    event.preventDefault();
+    form.reset()
+    event.preventDefault()
+}
+
+function createNewBookCard(title, author, pages, read) {
+    const bookCard = document.createElement("div");
+    const titleCard = document.createElement("h2");
+    const authorCard = document.createElement("h2");
+    const pagesCard = document.createElement("h2");
+    const readCard = document.createElement("h2");
+    
+    titleCard.textContent = title;
+    authorCard.textContent = author;
+    pagesCard.textContent = pages;
+    readCard.textContent = read;
+
+    bookCard.appendChild(titleCard)
+    bookCard.appendChild(authorCard)
+    bookCard.appendChild(pagesCard)
+    bookCard.appendChild(readCard)
+    bookCard.classList.add("book-card")
+    booksContainer.appendChild(bookCard)
 }
 
 
