@@ -7,7 +7,8 @@ form.addEventListener("submit", submitNewBook)
 
 
 console.log(myLibrary)
-function Book(title, author, pages, read) {
+function Book(id, title, author, pages, read) {
+    this.id = id;
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -15,17 +16,10 @@ function Book(title, author, pages, read) {
 }
 
 
-addBookToLibrary("The Hobbit", "JJR", "330", "yes")
-addBookToLibrary("Bravo", "JJR", "330", "yes")
+addBookToLibrary("TheHobbitid", "The Hobbit", "JJR", "330", "yes")
+addBookToLibrary("Bravoid", "Bravo", "JJR", "330", "yes")
 console.log(myLibrary)
 
-
-
-/*          --- LIBRARY FUNCTIONS ---           */
-function addBookToLibrary(title, author, pages, read) {
-    const newBook = new Book(title, author, pages, read);
-    myLibrary.push(newBook)
-}
 
 
 /*          --- FORM FUNCTIONS ---          */
@@ -34,10 +28,10 @@ function submitNewBook(event) {
     const inputAuthor = document.querySelector("#author").value;
     const inputPages = document.querySelector("#pages").value;
     const inputRead = document.querySelector('input[name="read"]:checked').value;
+    const idCard = `${inputTitle}-${inputAuthor}-book-card`.replaceAll(" ", "");
 
-    addBookToLibrary(inputTitle, inputAuthor, inputPages, inputRead)
-    createNewBookCard(inputTitle, inputAuthor, inputPages, inputRead)
-
+    addBookToLibrary(idCard, inputTitle, inputAuthor, inputPages, inputRead)
+    
     console.log(myLibrary)
     form.reset()
     event.preventDefault()
@@ -49,49 +43,42 @@ function createNewBookCard(title, author, pages, read) {
     const authorCard = document.createElement("h2");
     const pagesCard = document.createElement("h2");
     const readCard = document.createElement("h2");
+    const btnCard = document.createElement("button");
+    const idCard = `${title}-${author}-book-card`.replaceAll(" ", "");
     
     titleCard.textContent = title;
     authorCard.textContent = author;
     pagesCard.textContent = pages;
     readCard.textContent = read;
+    btnCard.textContent = "DELETE";
+
+    bookCard.classList.add("book-card")
+    btnCard.classList.add("btnDeleteBook")
+    bookCard.id = idCard;
 
     bookCard.appendChild(titleCard)
     bookCard.appendChild(authorCard)
     bookCard.appendChild(pagesCard)
     bookCard.appendChild(readCard)
-    bookCard.classList.add("book-card")
+    bookCard.appendChild(btnCard)
     bookCardContainer.appendChild(bookCard)
+
+    btnCard.addEventListener("click", deleteBookFromLibrary)
 }
 
 
 
+/*          --- LIBRARY FUNCTIONS ---           */
+function addBookToLibrary(id, title, author, pages, read) {
+    const newBook = new Book(id, title, author, pages, read);
+    myLibrary.push(newBook)
 
+    createNewBookCard(title, author, pages, read)
+}
 
-/*          --- DOM MANIPULATION PRACTICE---            */
-// const booksContainer = document.querySelector(".books-container");
-// document.addEventListener("click", practice)
-
-// function practice() {
-//     const div = document.createElement("div");
-//     const title = document.createElement("h2");
-//     const author = document.createElement("h2");
-//     const pages = document.createElement("h2");
-//     const read = document.createElement("h2");
-    
-//     title.textContent = "Ronald";
-//     author.textContent = "McDonald";
-//     pages.textContent = "342";
-//     read.textContent = "Yes"
-
-//     div.appendChild(title)
-//     div.appendChild(author)
-//     div.appendChild(pages)
-//     div.appendChild(read)
-//     div.classList.add("book-card")
-//     booksContainer.appendChild(div)
-// }
-
-// const inputRead = document.getElementsByName("read");
-// console.log(inputRead)
-
+function deleteBookFromLibrary() {
+    const bookIndex = myLibrary.map(bookId => bookId.id).indexOf(this.parentNode.id);
+    myLibrary.splice(bookIndex, 1)
+    this.parentNode.remove(); 
+}
 
