@@ -1,5 +1,5 @@
 const form = document.querySelector("#newBook-form");
-const booksContainer = document.querySelector(".books-container");
+const bookCardContainer = document.querySelector(".bookCard-container");
 let myLibrary = [];
 
 form.addEventListener("submit", submitNewBook)
@@ -33,7 +33,7 @@ function submitNewBook(event) {
     const inputTitle = document.querySelector("#title").value;
     const inputAuthor = document.querySelector("#author").value;
     const inputPages = document.querySelector("#pages").value;
-    const inputRead = document.querySelector("#read").value;
+    const inputRead = document.querySelector('input[name="read"]:checked').value;
 
     addBookToLibrary(inputTitle, inputAuthor, inputPages, inputRead)
     createNewBookCard(inputTitle, inputAuthor, inputPages, inputRead)
@@ -60,7 +60,7 @@ function createNewBookCard(title, author, pages, read) {
     bookCard.appendChild(pagesCard)
     bookCard.appendChild(readCard)
     bookCard.classList.add("book-card")
-    booksContainer.appendChild(bookCard)
+    bookCardContainer.appendChild(bookCard)
 }
 
 
@@ -91,5 +91,7 @@ function createNewBookCard(title, author, pages, read) {
 //     booksContainer.appendChild(div)
 // }
 
+// const inputRead = document.getElementsByName("read");
+// console.log(inputRead)
 
 

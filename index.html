@@ -19,17 +19,24 @@
         </div>
         <div>
             <label for="pages">Pages: </label>
-            <input type="text" name="pages" id="pages" required>
+            <input type="number" name="pages" id="pages" required>
         </div>
         <div>
-            <label for="read">Read?: </label>
-            <input type="text" name="read" id="read" required>
+            Read?
+            <div>
+                <label for="read">Yes</label>
+                <input type="radio" name="read" id="yes-read" value="yes" checked="checked">
+            </div>
+            <div>
+                <label for="read">No</label>
+                <input type="radio" name="read" id="no-read" value="no">
+            </div>
         </div>
         <div>
             <button type="submit">Submit</button>
         </div>
     </form>
-    <div class="books-container">
+    <div class="bookCard-container">
         <div class="book-card">
             <h2>The Hobbit</h2>
             <h2>J.R.R Tolkien</h2>
