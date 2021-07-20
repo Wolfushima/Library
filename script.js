@@ -15,9 +15,15 @@ function Book(id, title, author, pages, read) {
     this.read = read;
 }
 
+Book.prototype.toggleReadStatus = function() {
+    if (this.read === "Read") { this.read = "Not Read" }
+    else { this.read = "Read" }
+}
 
-addBookToLibrary("TheHobbitid", "The Hobbit", "JJR", "330", "yes")
-addBookToLibrary("Bravoid", "Bravo", "JJR", "330", "yes")
+
+
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
 console.log(myLibrary)
 
 
@@ -63,6 +69,7 @@ function createNewBookCard(title, author, pages, read) {
     bookCard.appendChild(btnCard)
     bookCardContainer.appendChild(bookCard)
 
+    readCard.addEventListener("click", changeReadStatus)
     btnCard.addEventListener("click", deleteBookFromLibrary)
 }
 
@@ -80,5 +87,12 @@ function deleteBookFromLibrary() {
     const bookIndex = myLibrary.map(bookId => bookId.id).indexOf(this.parentNode.id);
     myLibrary.splice(bookIndex, 1)
     this.parentNode.remove(); 
+}
+
+function changeReadStatus() {
+    const bookIndex = myLibrary.map(bookId => bookId.id).indexOf(this.parentNode.id);
+    if (this.textContent === "Read") { this.textContent = "Not Read"}
+    else { this.textContent = "Read"}
+    myLibrary[bookIndex].toggleReadStatus();
 }
 
