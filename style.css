@@ -4,7 +4,10 @@
     --dark-green: hsla(175, 27%, 33%);
     --green: hsla(145, 84%, 43%);
     --green-100: hsl(145, 84%, 33%);
+    --blue: hsl(207, 100%, 25%);
     --dark-blue: hsla(208, 20%, 51%);
+    --dark-blue-100: hsl(208, 20%, 81%);
+    --dark-blue-200: hsl(208, 20%, 91%);
     --white: rgb(236, 236, 236);
     --light-gray: hsla(240, 1%, 86%);
     --light-gray-100: hsla(240, 1%, 86%, 0.87);
@@ -26,10 +29,43 @@ html {
 }
 
 body {
+    margin: auto;
     min-height: 100vh;
     width: auto;
     background-color: var(--light-gray);
 }
+
+/*          --- open form button ---            */
+.openForm-btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    height: 20px;
+    min-width: 100vw;
+    background-color: var(--dark-blue-100);
+    box-shadow: 0 0 10px var(--blue);
+}
+
+.openForm-btn-container button {
+    margin: auto;
+    position: relative;
+    bottom: 10px;
+    height: 40px;
+    padding: 0 10px;
+    border: 1px solid var(--dark-green);
+    border-radius: 15px;
+    cursor: pointer;
+    color: var(--dark-gray);
+    background-color: var(--dark-blue-200);
+    box-shadow: 0 0 10px var(--blue);
+}
+
+.openForm-btn-container button:hover {
+    background-color: var(--dark-blue);
+}
+
+
 
 /*          --- form ---            */
 form {
@@ -125,6 +161,8 @@ form button[type=submit]:active {
     color: var(--light-red);
     opacity: 0.65;
 }
+
+
 /*          --- header ---          */
 header {
     display: flex;
@@ -137,19 +175,22 @@ header {
     font-weight: 900;
     min-height: 20vh;
     min-width: fit-content;
+    margin: auto;
     background-color: var(--dark-blue);
 }
 
 
 /*          --- book-card ---           */
 .bookCard-container {
+    margin-top: 30px;
     width: auto;
     height: auto;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-content: space-between;
     flex-flow: row wrap;
-    background-color: aquamarine;
+    background-color: rgba(0, 0, 0, 0.061);
 }
 
 .bookCard-container .book-card {
