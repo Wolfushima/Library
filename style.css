@@ -1,17 +1,167 @@
+:root {
+    --dark-gray: hsla(180, 11%, 13%);
+    --dark-gray-100: hsl(180, 39%, 13%);
+    --dark-green: hsla(175, 27%, 33%);
+    --green: hsla(145, 84%, 43%);
+    --green-100: hsl(145, 84%, 33%);
+    --dark-blue: hsla(208, 20%, 51%);
+    --white: rgb(236, 236, 236);
+    --light-gray: hsla(240, 1%, 86%);
+    --light-gray-100: hsla(240, 1%, 86%, 0.87);
+    --beige: hsla(19, 17%, 78%);
+    --light-red: hsl(0, 20%, 63%);
+}
+
 *,
 *::before,
 *::after {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    font-family: "Righteous";
 }
 
-.bookCard-container {
+html {
+    font-size: 63%;
+}
+
+body {
+    min-height: 100vh;
+    width: auto;
+    background-color: var(--light-gray);
+}
+
+/*          --- form ---            */
+form {
+    display: flex;
+    flex-flow: column wrap;
+    width: fit-content;
+    padding: 10px;
+    font-size: 2.5em;
+    color: var(--light-gray);
+    background-color: var(--dark-gray-100);
+    position: relative;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    box-shadow: 0 0 5px var(--light-gray-100);
+}
+
+form input[type=text],
+form input[type=number] {
+    font-size: 0.6em;
+    color: var(--dark-gray);
     width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 2px solid var(--green);
+    border-radius: 5px;
+}
+
+form input[type=text]:focus,
+form input[type=number]:focus {
+    background-color: var(--white);
+    outline: none;
+}
+
+form .radioBtn-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+form .radio-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 20px;
+}
+
+form input[type=radio] {
+    width: 15px;
+    margin: 8px 5px;
+    cursor: pointer;
+    vertical-align: middle;
+}
+
+form button[type=submit] {
+    width: 100%;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    color: var(--white);
+    background-color: var(--green);
+}
+
+form button[type=submit]:hover {
+    background-color: var(--green-100);
+}
+
+form button[type=submit]:active {
+    transform: scale(99%)
+}
+
+.form-popup {
+    z-index: 9;
+    display: none;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0, 0, 0, 0.479);
+}
+
+::placeholder {
+    color: var(--light-red);
+    opacity: 0.65;
+}
+/*          --- header ---          */
+header {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 8em;
+    color: var(--light-gray);
+    font-weight: 900;
+    min-height: 20vh;
+    min-width: fit-content;
+    background-color: var(--dark-blue);
+}
+
+
+/*          --- book-card ---           */
+.bookCard-container {
+    width: auto;
     height: auto;
+    display: flex;
+    justify-content: center;
+    align-content: space-between;
+    flex-flow: row wrap;
     background-color: aquamarine;
 }
 
 .bookCard-container .book-card {
-    background-color: bisque;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: rgb(12, 165, 25);
     width: fit-content;
 }
+
+
+
+

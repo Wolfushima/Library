@@ -1,8 +1,21 @@
+const htmlWindow = document.querySelector("window");
 const form = document.querySelector("#newBook-form");
+const formContainer = document.querySelector(".js-formPopup");
+const openFormBtn = document.querySelector(".openForm-btn");
 const bookCardContainer = document.querySelector(".bookCard-container");
 let myLibrary = [];
 
 form.addEventListener("submit", submitNewBook)
+openFormBtn.addEventListener("click", openForm)
+window.addEventListener("click", closeForm)
+function openForm() {
+    formContainer.style.display = "block";
+}
+function closeForm(e) {
+    if (e.target == formContainer) {
+        formContainer.style.display = "none";
+    }
+}
 
 
 
