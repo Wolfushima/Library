@@ -5,6 +5,7 @@
     --green: hsla(145, 84%, 43%);
     --green-100: hsl(145, 84%, 33%);
     --blue: hsl(207, 100%, 25%);
+    --blue-100: hsl(207, 100%, 55%);
     --dark-blue: hsla(208, 20%, 51%);
     --dark-blue-100: hsl(208, 20%, 81%);
     --dark-blue-200: hsl(208, 20%, 91%);
@@ -157,7 +158,7 @@ form button[type=submit]:active {
     height: 100%;
     overflow: auto;
     background-color: rgb(0,0,0);
-    background-color: rgba(0, 0, 0, 0.479);
+    background-color: rgba(0, 0, 0, 0.692);
 }
 
 ::placeholder {
@@ -187,7 +188,7 @@ header {
 .bookCard-container {
     width: 100%;
     max-width: 100%;
-    margin: 30px 0 0 0;
+    margin: 20px 0 20px 0;
     height: auto;
     display: flex;
     justify-content: center;
@@ -195,6 +196,9 @@ header {
     align-content: space-around;
     flex-flow: row wrap;
     background-color: hsla(0, 0%, 0%, 0.061);
+    border-top: double 10px rgba(255, 255, 255, 0.281);
+    border-bottom: double 10px rgba(255, 255, 255, 0.281);
+    padding: 10px 0 10px 0;
 }
 
 .bookCard-container .book-card {
@@ -216,6 +220,7 @@ header {
 .book-card h2 {
     font-size: 2em;
     color: var(--dark-blue-200);
+    text-shadow: 0 0 3px rgb(31, 31, 31);
 }
 
 .book-card .titleBook-card {
@@ -240,7 +245,11 @@ header {
     margin-bottom: 10px;
 }
 
-.book-card .btnDeleteBook-card {
+.book-card .readBook-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
     width: 30%;
     padding: 14px 20px;
     margin: 8px 0;
@@ -248,6 +257,37 @@ header {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1em;
+    color: var(--white);
+    background-color: var(--dark-blue);
+    border: 1px solid var(--dark-gray);
+    box-shadow: 0 0 2px var(--dark-gray);
+}
+
+.book-card .readBook-card:hover {
+    background-color: var(--blue-100);
+}
+
+.book-card .pagesBook-card {
+    background-color: rgba(0, 0, 0, 0.096);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 1.3em;
+}
+
+.book-card .btnDeleteBook-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-self: flex-end;
+    height: 20px;
+    width: 20px;
+    padding: 15px 35px;
+    margin-top: -45px;
+    margin-right: -5px;
+    border: none;
+    border-radius: 0 0 0 15px;
+    cursor: pointer;
+    font-size: 1.8em;
     color: var(--white);
     background-color: hsl(0deg 30% 59%);
     border: 1px solid var(--dark-gray);
@@ -258,7 +298,8 @@ header {
     background-color: hsl(0deg 100% 59%);
 }
 
-.book-card .btnDeleteBook-card:active {
+.book-card .btnDeleteBook-card:active,
+.book-card .readBook-card:active {
     transform: scale(90%);
 }
 
