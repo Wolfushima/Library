@@ -37,6 +37,21 @@ Book.prototype.toggleReadStatus = function() {
 
 addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
 addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
+addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+
 console.log(myLibrary)
 
 
@@ -59,6 +74,7 @@ function submitNewBook(event) {
 function createNewBookCard(title, author, pages, read) {
     const bookCard = document.createElement("div");
     const titleCard = document.createElement("h2");
+    const byCard = document.createElement("h2");
     const authorCard = document.createElement("h2");
     const pagesCard = document.createElement("h2");
     const readCard = document.createElement("h2");
@@ -66,22 +82,30 @@ function createNewBookCard(title, author, pages, read) {
     const idCard = `${title}-${author}-book-card`.replaceAll(" ", "");
     
     titleCard.textContent = title;
+    byCard.textContent = "by";
     authorCard.textContent = author;
-    pagesCard.textContent = pages;
+    pagesCard.textContent = `Pages: ${pages}`;
     readCard.textContent = read;
     btnCard.textContent = "DELETE";
 
     bookCard.classList.add("book-card")
-    btnCard.classList.add("btnDeleteBook")
+    titleCard.classList.add("titleBook-card")
+    authorCard.classList.add("authorBook-card")
+    btnCard.classList.add("btnDeleteBook-card")
     bookCard.id = idCard;
 
     bookCard.appendChild(titleCard)
+    bookCard.appendChild(byCard)
     bookCard.appendChild(authorCard)
     bookCard.appendChild(pagesCard)
     bookCard.appendChild(readCard)
     bookCard.appendChild(btnCard)
     bookCardContainer.appendChild(bookCard)
 
+    if (read === "Read") {
+        bookCard.style.backgroundColor = "hsl(160, 59%, 45%)";
+    } else { bookCard.style.backgroundColor = "hsl(0deg 59% 45%)" }
+    
     readCard.addEventListener("click", changeReadStatus)
     btnCard.addEventListener("click", deleteBookFromLibrary)
 }
@@ -104,8 +128,14 @@ function deleteBookFromLibrary() {
 
 function changeReadStatus() {
     const bookIndex = myLibrary.map(bookId => bookId.id).indexOf(this.parentNode.id);
-    if (this.textContent === "Read") { this.textContent = "Not Read"}
-    else { this.textContent = "Read"}
+    if (this.textContent === "Read") {
+        this.parentNode.style.backgroundColor = "hsl(0deg 59% 45%)"
+        this.textContent = "Not Read"
+    }
+    else if (this.textContent === "Not Read") {
+        this.parentNode.style.backgroundColor = "hsl(160, 59%, 45%)"
+        this.textContent = "Read"   
+    }
     myLibrary[bookIndex].toggleReadStatus();
 }
 
