@@ -29,21 +29,9 @@ Book.prototype.toggleReadStatus = function() {
 
 
 addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
-addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
-addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
-addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
-addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
-addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
-addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
-addBookToLibrary("TheHobbit-JJR-book-card", "The Hobbit", "JJR", "330", "Read")
-addBookToLibrary("Bravo-JJR-book-card", "Bravo", "JJR", "330", "Not Read")
+addBookToLibrary("ToKillaMockingbird-HarperLee-book-card", "To Kill a Mockingbird", "Harper Lee", "342", "Not Read")
+addBookToLibrary("TheGreatGatsby-F.ScottFitzgerald-book-card", "The Great Gatsby", "F. Scott Fitzgerald", "180", "Read")
+
 
 
 
