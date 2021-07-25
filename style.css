@@ -51,7 +51,7 @@ main {
     background-color: rgba(115, 115, 150, 0.13);
 }
 
-/*          --- open form button ---            */
+/*          --- OPEN FORM BUTTON ---            */
 .openForm-btn-container {
     display: flex;
     justify-content: center;
@@ -83,7 +83,7 @@ main {
 
 
 
-/*          --- form ---            */
+/*          --- FORM ---            */
 form {
     display: flex;
     flex-flow: column wrap;
@@ -179,7 +179,7 @@ form button[type=submit]:active {
 }
 
 
-/*          --- header ---          */
+/*          --- HEADER ---          */
 header {
     width: 100%;
     display: flex;
@@ -196,7 +196,7 @@ header {
 }
 
 
-/*          --- book-card ---           */
+/*          --- BOOK CARD ---           */
 .bookCard-container {
     width: 100%;
     max-width: 100%;
@@ -326,7 +326,7 @@ header {
 }
 
 
-/*          --- footer ---          */
+/*          --- FOOTER ---          */
 footer {
     filter: invert();
     border-top: yellow solid .1px;
