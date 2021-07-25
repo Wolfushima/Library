@@ -102,8 +102,8 @@ function createNewBookCard(title, author, pages, read) {
     bookCardContainer.appendChild(bookCard)
 
     if (read === "Read") {
-        bookCard.style.background = "linear-gradient(#2fb689, #2fb6894a)";
-    } else { bookCard.style.background = "linear-gradient(hsl(0deg 0% 81%), rgb(145 152 229 / 51%))"; }
+        bookCard.style.background = "linear-gradient(rgb(67 223 171), rgb(47 182 137))";
+    } else { bookCard.style.background = "linear-gradient(rgb(246 86 86 / 55%), rgb(181 38 38))"; }
     
     readCard.addEventListener("click", changeReadStatus)
     btnCard.addEventListener("click", deleteBookFromLibrary)
@@ -128,11 +128,11 @@ function deleteBookFromLibrary() {
 function changeReadStatus() {
     const bookIndex = myLibrary.map(bookId => bookId.id).indexOf(this.parentNode.id);
     if (this.textContent === "Read") {
-        this.parentNode.style.background = "linear-gradient(hsl(0deg 0% 81%), rgb(145 152 229 / 51%))"
+        this.parentNode.style.background = "linear-gradient(rgb(246 86 86 / 55%), rgb(181 38 38))"
         this.textContent = "Not Read"
     }
     else if (this.textContent === "Not Read") {
-        this.parentNode.style.background = "linear-gradient(#2fb689, #2fb6894a)"
+        this.parentNode.style.background = "linear-gradient(rgb(67 223 171), rgb(47 182 137))"
         this.textContent = "Read"   
     }
     myLibrary[bookIndex].toggleReadStatus();
