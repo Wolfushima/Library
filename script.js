@@ -12,19 +12,31 @@ openFormBtn.addEventListener("click", openForm)
 window.addEventListener("click", closeForm)
 
 
+class Book {
+    constructor(id, title, author, pages, read) {
+        this.id = id;
+        this.title = title;
+        this.author = pages;
+        this.read = read;
+    }
 
-function Book(id, title, author, pages, read) {
-    this.id = id;
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+    toggleReadStatus() {
+        if (this.read === "Read") { this.read = "Not Read" }
+        else { this.read = "Read" }
+    }
 }
+// function Book(id, title, author, pages, read) {
+//     this.id = id;
+//     this.title = title;
+//     this.author = author;
+//     this.pages = pages;
+//     this.read = read;
+// }
 
-Book.prototype.toggleReadStatus = function() {
-    if (this.read === "Read") { this.read = "Not Read" }
-    else { this.read = "Read" }
-}
+// Book.prototype.toggleReadStatus = function() {
+//     if (this.read === "Read") { this.read = "Not Read" }
+//     else { this.read = "Read" }
+// }
 
 
 
